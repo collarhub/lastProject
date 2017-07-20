@@ -115,8 +115,8 @@ text-align:center;
 		<%
 			ArrayList<MemberVO> list = (ArrayList<MemberVO>) request.getAttribute("list");
 			if (!list.isEmpty()) {
-		%>
-		<table border="1">
+		%><div class = "table-responsive"> 
+		<table border="1" class="table table-striped" class="table table-hover">
 			<tr>
 				<th>ID</th>
 				<!-- <th>비밀번호</th> -->
@@ -145,14 +145,14 @@ text-align:center;
 				<td><%=member.getPhoto()%></td>
 				<td><%=member.getRank()%></td>
 			</tr>
-
+			
 			<%
 				}
 				} else {
 					out.print("<h4>등록된 회원 정보가 없습니다.</h4>");
 				}
 			%>
-		</table>
+		</table></div>
 	</div>
 
 	<footer style="background-color: #000000; color: #ffffff">
