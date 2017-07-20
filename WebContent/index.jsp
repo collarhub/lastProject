@@ -44,12 +44,7 @@
 							</ul>
 						</li>
 					</ul>
-					<form class="navbar-form navbar-left">
-						<div class="form-group">
-							<input type="text" class="form-control" placeholder="책을 검색해요">
-						</div>
-						<button type="submit" class="btn btn-default">검색</button>
-					</form>
+					
 					<ul class="nav navbar-nav navbar-right">
 						<%
 								String id = (String)session.getAttribute("id");
@@ -81,12 +76,31 @@
 			<div class="jumbotron">
 				<h1 class="text-center">책을 디비다 </h1>
 				<p class="text-center">안녕하세요. 원하는 도서를 검색하고 리뷰를 확인하세요.</p>
-				<select style="color:black"><option value="제목" style="color:black">제목<option value="저자" style="color:black">저자<option value="출판사" style="color:black">출판사</select>
-				<div class="form-group">
-					<input type="text" class="form-control" placeholder="책을 검색해요" style="color:black">
-				</div>
-				<p class="text-center">
-				<button type="submit" class="btn btn-primary brn-lg" href="#" role="button">검색</button></p>
+				
+				<form role="form" action="bookSelectProc.jsp" method="post">
+                    <div class="form-group">
+			<div class="col-xs-2">
+			<select class="form-control" name="bysearch">
+      				<option value="title">Title</option>
+      				<option value="publisher">Publisher</option>
+      				<option value="author">Author</option>
+      				<option value="content">Content</option>
+      				<option value="isbn">ISBN</option>
+    			</select>
+			</div>
+			<div class="col-xs-9">
+	                        <input type="text" name="keyword" class="form-control"></input>
+			</div>
+			<div class="col-xs-1">
+				<span class="input-group-gtn">
+				<button type="submit" name="page" value="1" class="btn btn-primary">
+				<span class="glyphicon glyphicon-search"></span>
+			</button></span>
+			</div>
+			</div>
+                    </p><br><br>
+		</form><br><br>
+		
 				<p class = "text-center"><a class="btn btn-primary btn-lg" href="review.html" role="button">리뷰 보러 가기</a> </p>
 			</div>
 			<div class="row">
