@@ -47,43 +47,48 @@ $(document).ready(function() {
 	// 2. 공통 함수
 	var viewReviewList = function() {
 		$.get("viewReviewList.do", param, function(data) {
-			$("#reviewlist").empty();
-			var tmpl = $.templates("#tmpl_review");
-			var str =  tmpl.render(data.reviewList.reviewList);
-			$("#reviewlist").html(str);
+			if(data != null) {
+				$("#reviewlist").empty();
+				var tmpl = $.templates("#tmpl_review");
+				var str = tmpl.render(data.reviewList.reviewList);
+				$("#reviewlist").html(str);
 
-			totalPage = Math.floor((data.totalCount-1)/ param.pagesize) + 1;
+				totalPage = Math.floor((data.totalCount - 1) / param.pagesize) + 1;
+			}
+			else {
+				totalPage = 1;
+			}
 			pageOption.count = totalPage;
 			pageOption.start = param.pageno;
 			$("#paging").paginate(pageOption);
 		});
 	};
-	
-	var ajaxLoading = function(isLoading){
-		if (isLoading == false) {
-			$("body").waitMe("hide");
-		} else {
-			$("body").waitMe({
-				effect: "ios",
-				text: "처리중입니다.",
-				bg: 'rgba(255,255,255,0.7)',
-				color: '#000',
-				source: 'waitme/img.svg',
-			});			
-		}
-	};
 
-	// 3. 이벤트 처리
-	$(document).ajaxStart(function() {
-		ajaxLoading(true);
-	}).ajaxStop(function() {
-		ajaxLoading(false);
-	});
-	
-	// 4. 화면 초기화 코드
-	viewReviewList();
+				var ajaxLoading = function(isLoading) {
+					if (isLoading == false) {
+						$("body").waitMe("hide");
+					} else {
+						$("body").waitMe({
+							effect : "ios",
+							text : "처리중입니다.",
+							bg : 'rgba(255,255,255,0.7)',
+							color : '#000',
+							source : 'waitme/img.svg',
+						});
+					}
+				};
 
-});
+				// 3. 이벤트 처리
+				$(document).ajaxStart(function() {
+					ajaxLoading(true);
+				}).ajaxStop(function() {
+					ajaxLoading(false);
+				});
+
+				// 4. 화면 초기화 코드
+				viewReviewList();
+
+			});
 </script>
 <script id="tmpl_review" type="text/x-jsrender">
 	<tr>

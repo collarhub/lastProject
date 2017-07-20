@@ -53,6 +53,7 @@ public class MyController {
 		
 		try { intPageno = Integer.parseInt(pageno);  } catch(Exception e) { }
 		try { intPagesize = Integer.parseInt(pagesize);  } catch(Exception e) { }
+
 		ReviewsListVO reviewsList = null;
 		if (intPageno == 0) {
 			reviewsList = new MyService().getReviewsList();

@@ -143,7 +143,7 @@ public class NaverBookService {
  
             factory = XmlPullParserFactory.newInstance();
             XmlPullParser parser = factory.newPullParser();
-            parser.setInput((new InputStreamReader(urlConn.getInputStream())));
+            parser.setInput((new InputStreamReader(urlConn.getInputStream(), "UTF-8")));
  
             
             int eventType = parser.getEventType();
@@ -248,7 +248,7 @@ public class NaverBookService {
  
             factory = XmlPullParserFactory.newInstance();
             XmlPullParser parser = factory.newPullParser();
-            parser.setInput((new InputStreamReader(urlConn.getInputStream())));
+            parser.setInput((new InputStreamReader(urlConn.getInputStream(), "UTF-8")));
  
             
             int eventType = parser.getEventType();
@@ -353,7 +353,7 @@ public class NaverBookService {
  
             factory = XmlPullParserFactory.newInstance();
             XmlPullParser parser = factory.newPullParser();
-            parser.setInput((new InputStreamReader(urlConn.getInputStream())));
+            parser.setInput((new InputStreamReader(urlConn.getInputStream(), "UTF-8")));
  
             
             int eventType = parser.getEventType();
@@ -459,7 +459,7 @@ public class NaverBookService {
  
             factory = XmlPullParserFactory.newInstance();
             XmlPullParser parser = factory.newPullParser();
-            parser.setInput((new InputStreamReader(urlConn.getInputStream())));
+            parser.setInput((new InputStreamReader(urlConn.getInputStream(), "UTF-8")));
  
             
             int eventType = parser.getEventType();
