@@ -228,7 +228,7 @@ public class MemberDAO {
 		return list;
 	}
 	
-	public ArrayList<MemberVO> memberRank(String rank){
+	public ArrayList<MemberVO> memberRank(){
 		ArrayList<MemberVO> list = new ArrayList<MemberVO>();
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -237,8 +237,7 @@ public class MemberDAO {
 		
 		try {
 			conn = connect();
-			pstmt = conn.prepareStatement("select * from member order by ? asc");
-			pstmt.setString(1, rank);
+			pstmt = conn.prepareStatement("select * from member order by rank");
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
 				member = new MemberVO();

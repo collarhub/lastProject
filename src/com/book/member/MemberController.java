@@ -167,27 +167,23 @@ public class MemberController {
 				
 	}
 	
-	
 	@RequestMapping(value="rankInput.do", method=RequestMethod.GET)
-	public String rankInput(String member_id, HttpServletRequest request, HttpServletResponse response){
-		
+	public String rankInput(HttpServletRequest request, HttpServletResponse response){
 		
 		MemberService service = MemberService.getInstance();
-		ArrayList<MemberVO> list = service.memberRank(member_id);
+		ArrayList<MemberVO> list = service.memberRank();
 		request.setAttribute("ranklist", list);
-		
 		return "memberRankInput";
 	}	
 	
-/*	@RequestMapping(value = "rankInput.do", method = RequestMethod.POST)
-	public String rankInput(HttpServletRequest request, HttpServletResponse response) {
+	
+	/*@RequestMapping(value="rankInput.do", method=RequestMethod.POST)
+	public String rankInput(HttpServletRequest request, HttpServletResponse response){
 		
-		MemberService service = MemberService.getInstance();
-		ArrayList<MemberVO> list = service.memberList();
-		request.setAttribute("list", list);
+		
 
-		return "memberSearchOutput";
-				
-	}*/
+		return "memberRankInput";
+	}	*/
+	
 
 }

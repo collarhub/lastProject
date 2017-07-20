@@ -40,8 +40,8 @@ public class MemberService {
 		return list;
 	}
 	
-	public ArrayList<MemberVO> memberRank(String rank){
-		ArrayList<MemberVO> list = dao.memberRank(rank);
+	public ArrayList<MemberVO> memberRank(){
+		ArrayList<MemberVO> list = dao.memberRank();
 		return list;
 	}
 }

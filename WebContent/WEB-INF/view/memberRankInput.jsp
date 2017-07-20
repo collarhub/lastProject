@@ -111,7 +111,7 @@ text-align:center;
 		<h3>'책을 디비다'에 가입한 회원들의 랭킹을 볼 수 있습니다.</h3><hr><br><br>
 		<%
 			ArrayList<MemberVO> list = (ArrayList<MemberVO>) request.getAttribute("ranklist");
-			if (!list.isEmpty()) {
+			if (!list.isEmpty()) {	
 		%>
 		<table border="1">
 			<tr>
