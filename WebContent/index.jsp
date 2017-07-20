@@ -55,7 +55,7 @@
 								String id = (String)session.getAttribute("id");
 								if(id!=null && !id.equals("")){		//로그인 했을 경우
 							%>
-						<li><a href="#">블로그</a></li><%}%>
+						<li><a href="index.html?id=<%=id%>">블로그</a></li><%}%>
 						
 						<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">접속하기<span class ="caret"></span></a>
@@ -87,7 +87,7 @@
 				</div>
 				<p class="text-center">
 				<button type="submit" class="btn btn-primary brn-lg" href="#" role="button">검색</button></p>
-				<p class = "text-center"><a class="btn btn-primary btn-lg" href="#" role="button">리뷰 보러 가기</a> </p>
+				<p class = "text-center"><a class="btn btn-primary btn-lg" href="review.html" role="button">리뷰 보러 가기</a> </p>
 			</div>
 			<div class="row">
 				<div class="col-md-3" style="color:black">
