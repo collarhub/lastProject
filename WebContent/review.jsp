@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="">
 <head>
@@ -129,7 +131,7 @@ footer {
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="index.html">책을 디비다</a>
+					<a class="navbar-brand" href="index.jsp">책을 디비다</a>
 			</div>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
@@ -146,20 +148,30 @@ footer {
 							</ul>
 						</li>
 					</ul>
-					<form class="navbar-form navbar-left">
-						<div class="form-group">
-							<input type="text" class="form-control" placeholder="책을 검색해요">
-						</div>
-						<button type="submit" class="btn btn-default">검색</button>
-					</form>
 					<ul class="nav navbar-nav navbar-right">
+						<%
+								String id = (String)session.getAttribute("id");
+								if(id!=null && !id.equals("")){		//로그인 했을 경우
+							%>
+						<li><a href="blog.jsp?id=<%=id%>">블로그</a></li><%}%>
+						
 						<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">접속하기<span class ="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="#">로그인</a></li>
-							<li><a href="#">회원가입</a></li>
+									<%
+								//String id = (String)session.getAttribute("id");
+								if(id!=null && !id.equals("")){		//로그인 했을 경우
+							%>
+									<li><a href="searchInput.do">회원검색</a></li>
+	 								<li><a href="updateInput.do">회원정보수정</a></li>
+									<li><a href="logoutInput.do">(<%=(String)session.getAttribute("id") %>)  로그아웃</a></li>
+							<%}else{%>								
+									<li><a href="loginInput.do">로그인</a></li>
+									<li><a href="insertInput.do">회원가입</a></li>
+							<%} %>
 						</ul>
 						</li>
+					</ul>
 				</div>
 			</div>
 		</nav>
