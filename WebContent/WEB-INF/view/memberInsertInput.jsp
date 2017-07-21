@@ -130,7 +130,7 @@
 			<label>주소</label><input type="text" name="addr"
 				value="${member.addr }" required><br> <label>사진</label><input
 				type="file" name="photo" onchange="readURL(this);"><br>
-			<img id="UploadedImg" src="default.jpg" width="85" height="111"><br>
+			<img id="UploadedImg" src="default.jpg" width="100" height="111"><br>
 			<br> <label>점수</label><input type="text" name="rank" value="0"
 				disabled><br>
 			<br> <input type="submit" value="회원가입"> <input

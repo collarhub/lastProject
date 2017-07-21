@@ -193,7 +193,7 @@ footer {
 					class="add ui-button ui-button ui-state-default ui-button-text-only">
 					<a href="write.jsp"><span class="ui-button-text">글쓰기</span></a>
 				</button>
-				<div id="output" style="text-align: center; width: 830px;">
+				<div id="output" style="text-align: center; width: 830px; height:1000px">
 					<table id="review_table" style="border: solid 1px black;">
 						<thead>
 							<tr style="background-color: #cb842e; color: white; ">

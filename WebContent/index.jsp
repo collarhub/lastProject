@@ -31,7 +31,7 @@
 			</div>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="index.jsp">소개<span class="sr-only"></span></a></li>
+					<li class="active"><a href="profile.jsp">소개<span class="sr-only"></span></a></li>
 					<li><a href="bookInput.jsp">도서정보</a></li>
 					<li><a href="review.jsp">리뷰</a></li>
 					<li><a href="bookrankList.do">도서 순위</a></li>
@@ -119,7 +119,7 @@
 				</div>
 				<div class="col-md-3" style="color:black">
 					<h4>도서 순위</h4>
-					<p style="color:black">여기는 뭐하지</p>
+					<p style="color:black">추천받은 도서를 확인하세요</p>
 					<p><a class="btn btn-default" href="bookrankList.do">자세히 보기 </a></p>
 				</div>
 				<div class="col-md-3" style="color:black">
