@@ -249,7 +249,7 @@ footer {
 
 					<input type="submit" role="button" id="btnNewReview"
 						class="add ui-button ui-button ui-state-default ui-button-text-only" value="저장">
-					<input type="hidden" name="member_id" id="member_id" value="a">
+					<input type="hidden" name="member_id" id="member_id" value="<%=session.getAttribute("id")%>">
 					</form>
 				</div>
 			</div>

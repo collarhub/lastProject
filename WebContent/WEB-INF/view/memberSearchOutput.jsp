@@ -135,7 +135,7 @@ text-align:center;
 			%>
 
 			<tr>
-				<td><%=member.getMember_id()%></td>
+				<td><a href="blog.jsp?id=<%=member.getMember_id()%>"><%=member.getMember_id()%></a></td>
 				<%-- <td><%=member.getPassword()%></td> --%>
 				<td><%=member.getNickname()%></td>
 				<td><%=member.getEmail()%></td>
