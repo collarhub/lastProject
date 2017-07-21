@@ -91,7 +91,7 @@ input:disabled, textarea:disabled {
 			<div class="col-sm-12 col-md-12 col-lg-12">
 				<h2 class="ui-widget ui-header">리뷰</h2>
 				<div id="output" style="text-align: center; width: 630px;">
-					<form action="write.do" method="post" id="inputForm">
+					<form action="reviewUpdate.do?review_id=${ review.review_id }" method="post" id="inputForm">
 						<table id="review_table" style="border: solid 1px black;">
 							<tr style="background-color: #cb842e; color: white;">
 								<td style="width: 60px;">제목</td>
