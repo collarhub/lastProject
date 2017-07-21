@@ -79,7 +79,7 @@ text-align:center;
 								String id = (String)session.getAttribute("id");
 								if(id!=null && !id.equals("")){		//로그인 했을 경우
 							%>
-						<li><a href="index.html?id=<%=id%>">블로그</a></li><%}%>
+						<li><a href="blog.jsp?id=<%=id%>">블로그</a></li><%}%>
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown" role="button" aria-haspopup="true"
 						aria-expanded="false">접속하기<span class="caret"></span></a>
