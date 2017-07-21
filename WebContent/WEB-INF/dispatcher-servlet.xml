@@ -8,6 +8,7 @@
 
 	<context:component-scan base-package="com.book.member" />
 	<context:component-scan base-package="com.bookdbda.controller" />
+	<context:component-scan base-package="com.book.controller" />
 
 	<bean id="multipartResolver"
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />

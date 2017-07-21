@@ -63,6 +63,7 @@
 					<li class="active"><a href="index.jsp">소개<span class="sr-only"></span></a></li>
 					<li><a href="bookInput.jsp">도서정보</a></li>
 					<li><a href="review.jsp">리뷰</a>
+					<li><a href="bookrankList.do">도서 순위</a></li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">장르<span class ="caret"></span></a>
 							<ul class="dropdown-menu">
@@ -152,7 +153,7 @@
         	System.out.println(i);%>
         
         <div class="row">
-        <form role="form" action="bookRanking.jsp" method="post">
+        <form role="form" action="bookrankUpdate.do" method="post">
             <div class="col-md-1">
                 <img class="img-responsive" src="<%= booklist.get(i).getImage() %>" alt="">
             </div>
@@ -167,6 +168,7 @@
   				</ul></font>
                 <p><%= booklist.get(i).getDescription() %>
             </div><input type="hidden" name="isbn" value="<%= booklist.get(i).getIsbn() %>">
+            	<input type="hidden" name="title" value="<%= booklist.get(i).getTitle() %>">
             <div class="col-md-1">
             	<br><br><br><br><button type="submit" class="btn btn-primary btn-sm btn-circle">좋아요</button>
             </div>

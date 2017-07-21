@@ -48,6 +48,7 @@
 					<li class="active"><a href="index.jsp">소개<span class="sr-only"></span></a></li>
 					<li><a href="bookInput.jsp">도서정보</a></li>
 					<li><a href="review.jsp">리뷰</a>
+					<li><a href="bookrankList.do">도서 순위</a></li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">장르<span class ="caret"></span></a>
 							<ul class="dropdown-menu">

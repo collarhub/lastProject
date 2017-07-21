@@ -33,7 +33,8 @@
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="index.jsp">소개<span class="sr-only"></span></a></li>
 					<li><a href="bookInput.jsp">도서정보</a></li>
-					<li><a href="review.jsp">리뷰</a>
+					<li><a href="review.jsp">리뷰</a></li>
+					<li><a href="bookrankList.do">도서 순위</a></li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">장르<span class ="caret"></span></a>
 							<ul class="dropdown-menu">
@@ -117,9 +118,9 @@
 					<p><a class="btn btn-default"  href="http://book.naver.com/bestsell/bestseller_list.nhn?cp=kyobo" target="_blank">자세히 보기 </a></p>
 				</div>
 				<div class="col-md-3" style="color:black">
-					<h4>베스트 리뷰자</h4>
+					<h4>도서 순위</h4>
 					<p style="color:black">여기는 뭐하지</p>
-					<p><a class="btn btn-default" href="#">자세히 보기 </a></p>
+					<p><a class="btn btn-default" href="bookrankList.do">자세히 보기 </a></p>
 				</div>
 				<div class="col-md-3" style="color:black">
 					<h4>랭킹</h4>
