@@ -226,8 +226,8 @@ footer {
 			</div>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="index.html">소개<span class="sr-only"></span></a></li>
-					<li><a href="bookinfo.html">도서정보</a></li>
+					<li class="active"><a href="index.jsp">소개<span class="sr-only"></span></a></li>
+					<li><a href="#">도서정보</a></li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">장르<span class ="caret"></span></a>
 							<ul class="dropdown-menu">
@@ -239,6 +239,12 @@ footer {
 							</ul>
 						</li>
 					</ul>
+					<form class="navbar-form navbar-left">
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="책을 검색해요">
+					</div>
+					<button type="submit" class="btn btn-default">검색</button>
+					</form>
 					<ul class="nav navbar-nav navbar-right">
 						<%
 								String id = (String)session.getAttribute("id");

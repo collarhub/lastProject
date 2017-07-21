@@ -252,6 +252,9 @@ public class MyDAO {
 			if (rs.next()) {
 				review_id = rs.getString(1);
 			}
+			if(review_id == null) {
+				review_id = "1";
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {

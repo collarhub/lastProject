@@ -38,9 +38,9 @@ input:disabled, textarea:disabled {
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="index.html">소개<span
+					<li class="active"><a href="index.jsp">소개<span
 							class="sr-only"></span></a></li>
-					<li><a href="bookinfo.html">도서정보</a></li>
+					<li><a href="#">도서정보</a></li>
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown" role="button" aria-haspopup="true"
 						aria-expanded="false">장르<span class="caret"></span></a>
@@ -57,15 +57,31 @@ input:disabled, textarea:disabled {
 						<input type="text" class="form-control" placeholder="책을 검색해요">
 					</div>
 					<button type="submit" class="btn btn-default">검색</button>
-				</form>
-				<ul class="nav navbar-nav navbar-right">
-					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown" role="button" aria-haspopup="true"
-						aria-expanded="false">접속하기<span class="caret"></span></a>
+					</form>
+					<ul class="nav navbar-nav navbar-right">
+						<%
+								String id = (String)session.getAttribute("id");
+								if(id!=null && !id.equals("")){		//로그인 했을 경우
+							%>
+						<li><a href="blog.jsp?id=<%=id%>">블로그</a></li><%}%>
+						
+						<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">접속하기<span class ="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="#">로그인</a></li>
-							<li><a href="#">회원가입</a></li>
-						</ul></li>
+									<%
+								//String id = (String)session.getAttribute("id");
+								if(id!=null && !id.equals("")){		//로그인 했을 경우
+							%>
+									<li><a href="searchInput.do">회원검색</a></li>
+	 								<li><a href="updateInput.do">회원정보수정</a></li>
+									<li><a href="logoutInput.do">(<%=(String)session.getAttribute("id") %>)  로그아웃</a></li>
+							<%}else{%>								
+									<li><a href="loginInput.do">로그인</a></li>
+									<li><a href="insertInput.do">회원가입</a></li>
+							<%} %>
+						</ul>
+						</li>
+					</ul>
 			</div>
 		</div>
 	</nav>
@@ -94,7 +110,7 @@ input:disabled, textarea:disabled {
 										rows="15" cols="80" style="resize: none;" name="content" disabled>${ review.content }</textarea></td>
 							</tr>
 						</table>
-						<a href="review.html"
+						<a href="review.jsp"
 							class="add ui-button ui-button ui-state-default ui-button-text-only"
 							role="button" id="btnNewReview"> <span class="ui-button-text">목록</span></a>
 
