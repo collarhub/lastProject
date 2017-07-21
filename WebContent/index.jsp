@@ -44,7 +44,12 @@
 							</ul>
 						</li>
 					</ul>
-					
+					<form class="navbar-form navbar-left">
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="책을 검색해요">
+					</div>
+					<button type="submit" class="btn btn-default">검색</button>
+					</form>
 					<ul class="nav navbar-nav navbar-right">
 						<%
 								String id = (String)session.getAttribute("id");
@@ -104,16 +109,11 @@
 				<p class = "text-center"><a class="btn btn-primary btn-lg" href="review.jsp" role="button">리뷰 보러 가기</a> </p>
 			</div>
 			<div class="row">
-				<div class="col-md-3" style="color:black">
-					<h4>베스트 셀러 1</h4>
-					<p style="color:black">qptmxm tlkafdknfsjldfjkl<br>ddfd<br>fd<br>f</p>
-					<img src="Koala.jpg" width=100 height=100>
-					<p><a class="btn btn-default" data-target="#modal" data-toggle="modal">자세히 보기 </a></p>
-				</div>
-				<div class="col-md-3" style="color:black">
-					<h4>베스트 셀러 2</h4>
-					<p style="color:black">qptmxm tlkafdknfsdkfnalnsd</p>
-					<p><a class="btn btn-default" data-target="#modal" data-toggle="modal">자세히 보기 </a></p>
+				<div class="col-md-6" style="color:black">
+					<h4>금주의 베스트 셀러 </h4>
+					<p style="color:black">[교보문고]</p>
+					<img src="best.jpg" width=500 height=160>
+					<p><a class="btn btn-default"  href="http://book.naver.com/bestsell/bestseller_list.nhn?cp=kyobo" target="_blank">자세히 보기 </a></p>
 				</div>
 				<div class="col-md-3" style="color:black">
 					<h4>베스트 리뷰자</h4>
