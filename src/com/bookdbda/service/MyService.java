@@ -152,4 +152,8 @@ public class MyService {
 	public void updateReview(ReviewVO review) {
 		new MyDAO().updateReview(review);
 	}
+
+	public void addFollow(String member_id, String follower_id) {
+		new MyDAO().addFollow(member_id, follower_id);
+	}
 }

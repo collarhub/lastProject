@@ -388,4 +388,77 @@ public class MyDAO {
 		}
 	}
 
+	public void addFollow(String member_id, String follower_id) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		boolean chk1 = true;
+		boolean chk2 = true;
+
+		if(member_id.equals(follower_id)) {
+			chk1 = false;
+		}
+		
+		if (chk1) {
+			try {
+				conn = connect();
+				pstmt = conn.prepareStatement("select * from follow where member_id = ? and follower_id = ?");
+				pstmt.setString(1, member_id);
+				pstmt.setString(2, follower_id);
+				rs = pstmt.executeQuery();
+				if (rs.next()) {
+					chk2 = false;
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				try {
+					pstmt.close();
+					conn.close();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		
+		if (chk1) {
+			if (chk2) {
+				try {
+					conn = connect();
+					pstmt = conn.prepareStatement("insert into follow values (?, ?)");
+					pstmt.setString(1, member_id);
+					pstmt.setString(2, follower_id);
+					pstmt.executeUpdate();
+				} catch (Exception e) {
+					e.printStackTrace();
+				} finally {
+					try {
+						pstmt.close();
+						conn.close();
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
+			}
+			else {
+				try {
+					conn = connect();
+					pstmt = conn.prepareStatement("delete from follow where member_id = ? and follower_id = ?");
+					pstmt.setString(1, member_id);
+					pstmt.setString(2, follower_id);
+					pstmt.executeUpdate();
+				} catch (Exception e) {
+					e.printStackTrace();
+				} finally {
+					try {
+						pstmt.close();
+						conn.close();
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
+			}
+		}
+	}
+
 }

@@ -105,7 +105,7 @@ footer {
 				str0 = "<h1>Follower</h1>", s0 = "";
 				data.followList.forEach(function(item, index) {
 					s0 = "member_id : " + item.member_id
-							+ "<br>follower_id : <a href=\"index.html?id=" + item.follower_id + "\">" + item.follower_id + "</a>"
+							+ "<br>follower_id : <a href=\"blog.jsp?id=" + item.follower_id + "\">" + item.follower_id + "</a>"
 							+ "<br>";
 					str0 = str0 + s0;
 				});
@@ -147,7 +147,7 @@ footer {
 					str2 = "<h1>Follower</h1>", s1 = "";
 					data.followList.forEach(function(item, index) {
 						s1 = "member_id : " + item.member_id
-						+ "<br>follower_id : <a href=\"index.html?id=" + item.follower_id + "\">" + item.follower_id + "</a>"
+						+ "<br>follower_id : <a href=\"blog.jsp?id=" + item.follower_id + "\">" + item.follower_id + "</a>"
 								+ "<br>";
 						str2 = str2 + s1;
 					});
@@ -169,12 +169,12 @@ footer {
 					data.reviewList.forEach(function(item, index) {
 						s2 = "review_id : " + item.review_id
 							+ "<br>title : " + item.title
-							+ "<br>title : " + item.member_id
-							+ "<br>title : " + item.regist_date
-							+ "<br>title : " + item.click
-							+ "<br>title : " + item.book_id
-							+ "<br>title : " + item.content
-							+ "<br>title : " + item.score
+							+ "<br>member_id : " + item.member_id
+							+ "<br>regist_date : " + item.regist_date
+							+ "<br>click : " + item.click
+							+ "<br>book_id : " + item.book_id
+							+ "<br>content : " + item.content
+							+ "<br>score : " + item.score
 							+ "<br>";
 						str3 = str3 + s2;
 					});
@@ -207,6 +207,18 @@ footer {
 					$("#favorite").html(str4);
 				}
 			});
+		});
+		$("#btn-follow").click(function() {
+			$.get({
+				url : "addFollow.do",
+				data : {
+					member_id : member_id,
+					follower_id : "<%=session.getAttribute("id")%>"
+				},
+				success : function(data1) {
+				}
+			});
+			location.reload(true);
 		});
 	});
 </script>
@@ -281,9 +293,14 @@ footer {
 				</div>
 			</div>
 			<div class="col-sm-9 col-md-6 col-lg-8" id="right">
+				<div class="col-sm-10 col-md-10 col-lg-10">
 				<a type="button" class="btn btn-default" id="btn-about">about</a>
 				<a type="button" class="btn btn-default" id="btn-review">my board</a>
 				<a type="button" class="btn btn-default" id="btn-favorite">favorite</a>
+				</div>
+				<div class="col-sm-2 col-md-2 col-lg-2">
+				<a type="button" class="btn btn-primary" id="btn-follow" style="right: 0px">fallow</a>
+				</div>
 				<p id="myInfo"></p>
 				<p id="follow"></p>
 				<p id="myBoard"></p>

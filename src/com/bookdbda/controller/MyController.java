@@ -45,6 +45,12 @@ public class MyController {
 		mav.setViewName("favorite");
 		return mav;
 	}
+	@RequestMapping("addFollow.do")
+	public String addFollow(@RequestParam String member_id, @RequestParam String follower_id) {
+		System.out.println("fffff");
+		new MyService().addFollow(member_id, follower_id);
+		return "addfollow";
+	}
 	@RequestMapping("viewReviewList.do")
 	public ModelAndView reviewList(@RequestParam String pageno, @RequestParam String pagesize) {
 		ModelAndView mav = new ModelAndView();
