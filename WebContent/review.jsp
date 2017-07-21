@@ -12,8 +12,9 @@
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/humanity/jquery-ui.css" />
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <style>
-	body { font-size: 75%; }
+	body { }
     input.text { margin-bottom:12px; width:95%; padding: .4em; }
+    
 </style>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.js"></script>
 <script src="https://www.jsviews.com/download/jsrender.js"></script>
@@ -136,7 +137,8 @@ footer {
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="index.jsp">소개<span class="sr-only"></span></a></li>
-					<li><a href="#">도서정보</a></li>
+					<li><a href="bookInput.jsp">도서정보</a></li>
+					<li><a href="review.jsp">리뷰</a>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">장르<span class ="caret"></span></a>
 							<ul class="dropdown-menu">
@@ -190,18 +192,18 @@ footer {
 					class="add ui-button ui-button ui-state-default ui-button-text-only">
 					<a href="write.jsp"><span class="ui-button-text">글쓰기</span></a>
 				</button>
-				<div id="output" style="text-align: center; width: 630px;">
+				<div id="output" style="text-align: center; width: 830px;">
 					<table id="review_table" style="border: solid 1px black;">
 						<thead>
-							<tr style="background-color: #cb842e; color: white;">
-								<th style="width: 60px;">번호</th>
-								<th style="width: 100px;">책제목</th>
-								<th style="width: 250px;">제목</th>
-								<th style="width: 90px;">작성자</th>
-								<th style="width: 100px;">등록일</th>
-								<th style="width: 60px;">조회수</th>
-								<th style="width: 60px;">추천</th>
-								<th style="width: 120px;">기능</th>
+							<tr style="background-color: #cb842e; color: white; ">
+								<th style="width: 80px; text-align:center;">번호</th>
+								<th style="width: 150px; text-align:center;">책제목</th>
+								<th style="width: 250px; text-align:center;">제목</th>
+								<th style="width: 90px; text-align:center;">작성자</th>
+								<th style="width: 100px; text-align:center;">등록일</th>
+								<th style="width: 60px; text-align:center;">조회수</th>
+								<th style="width: 60px; text-align:center;">추천</th>
+								<th style="width: 120px; text-align:center;">기능</th>
 							</tr>
 						</thead>
 						<tbody id="reviewlist">

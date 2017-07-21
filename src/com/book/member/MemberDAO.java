@@ -237,7 +237,7 @@ public class MemberDAO {
 		
 		try {
 			conn = connect();
-			pstmt = conn.prepareStatement("select * from member order by rank");
+			pstmt = conn.prepareStatement("select * from member order by score desc");
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
 				member = new MemberVO();

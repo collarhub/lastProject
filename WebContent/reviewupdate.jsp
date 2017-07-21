@@ -170,7 +170,8 @@ footer {
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="index.jsp">소개<span
 							class="sr-only"></span></a></li>
-					<li><a href="#">도서정보</a></li>
+					<li><a href="bookInput.jsp">도서정보</a></li>
+					<li><a href="review.jsp">리뷰</a>
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown" role="button" aria-haspopup="true"
 						aria-expanded="false">장르<span class="caret"></span></a>

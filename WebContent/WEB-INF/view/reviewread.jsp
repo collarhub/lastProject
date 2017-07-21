@@ -40,7 +40,8 @@ input:disabled, textarea:disabled {
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="index.jsp">소개<span
 							class="sr-only"></span></a></li>
-					<li><a href="#">도서정보</a></li>
+					<li><a href="bookInput.jsp">도서정보</a></li>
+					<li><a href="review.jsp">리뷰</a>
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown" role="button" aria-haspopup="true"
 						aria-expanded="false">장르<span class="caret"></span></a>
@@ -90,7 +91,7 @@ input:disabled, textarea:disabled {
 		<div class="row">
 			<div class="col-sm-12 col-md-12 col-lg-12">
 				<h2 class="ui-widget ui-header">리뷰</h2>
-				<div id="output" style="text-align: center; width: 630px;">
+				<div id="output" style="text-align: center; width: 630px; height:600px;">
 					<form action="reviewUpdate.do?review_id=${ review.review_id }" method="post" id="inputForm">
 						<table id="review_table" style="border: solid 1px black;">
 							<tr style="background-color: #cb842e; color: white;">

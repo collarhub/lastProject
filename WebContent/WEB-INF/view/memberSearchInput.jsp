@@ -39,8 +39,9 @@
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="index.jspl">소개<span class="sr-only"></span></a></li>
 					<li><a href="#">도서정보</a></li>
+					<li><a href="review.jsp">리뷰</a>
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">장르<span class ="caret"></span></a>
+							<a href="bookInput.jsp" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">장르<span class ="caret"></span></a>
 							<ul class="dropdown-menu">
 								<li><a href="#">소설</a></li>
 								<li><a href="#">교육</a></li>
